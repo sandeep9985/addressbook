@@ -1,8 +1,8 @@
 pipeline {
     agent any
     parameters{
-        string(name:'ENV',defaultvalue:'test',description:'version to deploy')
-        booleanparam(name:'executetest',defaultvalue:true,description:'test executed')
+        string(name:'ENV',defaultValue:'test',description:'version to deploy')
+        booleanParam(name:'executetest',defaultvalue:true,description:'test executed')
         choice(name:'Appversion',choices:['1.1','1.2','1.3'])
     }
    
