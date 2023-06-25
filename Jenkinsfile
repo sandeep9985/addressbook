@@ -25,13 +25,13 @@ pipeline {
                     sh 'mvn test'
                     echo "executed Test command"
                 }
+           
+            }
             post {
                 always {
                      junit 'target/surefire-reports/*.xml'
                 }
             }
-            }
-
            
         }
         stage('Package') {
