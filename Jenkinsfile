@@ -29,6 +29,11 @@ pipeline {
            
         }
         stage('Deploy') {
+            when {
+                expression {
+                    BRANCH_NAME == 'PROD'
+                }
+            }
             steps {
                 echo "executed deploy command"
                 echo "deploy the appversion: ${params.Appversion}"
