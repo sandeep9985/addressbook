@@ -7,9 +7,8 @@ pipeline {
    
 
     stages {
-        agent any
         stage('Compile') {
-            
+            agent any
             steps {
                 script {
                     sh 'mvn compile'
