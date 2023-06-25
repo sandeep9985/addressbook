@@ -21,7 +21,7 @@ pipeline {
         stage('UnitTest') {
            
             steps {
-                script{
+                script {
                     sh 'mvn test'
                     echo "executed Test command"
                 }
@@ -32,7 +32,7 @@ pipeline {
         stage('Package') {
             
             steps {
-                script{
+                script {
                     sh 'mvn package'
                     echo "packaging the app"
                 }
