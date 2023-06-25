@@ -10,9 +10,10 @@ pipeline {
         stage('Compile') {
             
             steps {
-                sh 'mvn compile'
-                echo "executed build command"
-               
+                script {
+                    sh 'mvn compile'
+                    echo "executed build command"
+                }
             }
 
            
@@ -20,8 +21,10 @@ pipeline {
         stage('UnitTest') {
            
             steps {
-                sh 'mvn test'
-                echo "executed Test command"
+                script{
+                    sh 'mvn test'
+                    echo "executed Test command"
+                }
             }
 
            
@@ -29,9 +32,10 @@ pipeline {
         stage('Package') {
             
             steps {
-                sh 'mvn package'
-                echo "packaging the app"
-                
+                script{
+                    sh 'mvn package'
+                    echo "packaging the app"
+                }
             }
 
            
