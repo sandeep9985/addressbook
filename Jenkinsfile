@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
     tools {
         jdk 'Myjava'
         maven 'mymaven'
@@ -7,6 +7,7 @@ pipeline {
    
 
     stages {
+        agent any
         stage('Compile') {
             
             steps {
@@ -19,6 +20,7 @@ pipeline {
            
         }
         stage('UnitTest') {
+            agent any
            
             steps {
                 script {
@@ -35,6 +37,7 @@ pipeline {
            
         }
         stage('Package') {
+            agent {label 'linux_slave'}
             
             steps {
                 script {
