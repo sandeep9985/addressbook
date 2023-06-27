@@ -25,7 +25,7 @@ pipeline {
                 script {
                     sshagent(['TEST_SERVER']) {
                     echo "TESTING THE CODE"
-                    sh "ssh ec2-user@10.0.0.17 'mvn test'"
+                    sh "ssh -o StrictHostKeyChecking=no ec2-user@10.0.0.17 'mvn test'"
                     }
                 }
            
