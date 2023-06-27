@@ -23,8 +23,10 @@ pipeline {
            
             steps {
                 script {
-                    sh 'mvn test'
-                    echo "executed Test command"
+                    sshagent(['TEST_SERVER']) {
+                    echo "TESTING THE CODE"
+                    sh "ssh ec2-user@10.0.0.17 'mvn test'"
+                    }
                 }
            
             }
