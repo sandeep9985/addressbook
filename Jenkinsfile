@@ -28,8 +28,8 @@ pipeline {
                 script {
                     sshagent(['TEST_SERVER']) {
                     echo "TESTING THE CODE"
-                    sh "scp -o StrictHostKeyChecking=no server-script.sh ${TEST_SERVER_iP}:/home/ec2-user"
-                    sh "ssh -o StrictHostKeyChecking=no ${TEST_SERVER_iP} 'bash ~/server-script.sh'"
+                    sh "scp -o StrictHostKeyChecking=no server-script.sh ${TEST_SERVER_IP}:/home/ec2-user"
+                    sh "ssh -o StrictHostKeyChecking=no ${TEST_SERVER_IP} 'bash ~/server-script.sh'"
                     }
                 }
            
